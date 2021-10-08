@@ -28,8 +28,8 @@ if (appEnv === "development") {
   server = http.createServer(app);
 } else {
   protocol = "HTTPS (Secure)";
-  const privateKey = fs.readFileSync("server.key","utf-8");
-  const publicKey = fs.readFileSync("server.cert","utf-8");
+  const privateKey = fs.readFileSync("server.key", "utf-8");
+  const publicKey = fs.readFileSync("server.cert", "utf-8");
   server = https.createServer(
     {
       key: privateKey,
@@ -45,11 +45,9 @@ server.listen(constants.PORT, async () => {
   });
   console.log(
     chalk.blueBright.bold(
-      `
-        Yep this is working 🍺
-        App listen on port: ${constants.PORT} 🍕
-        Env: ${constants.NODE_ENV} 🦄
-        `
+          `
+          App listen on port: ${constants.PORT} 🍕
+          Env: ${constants.NODE_ENV} 🦄 `
     )
   );
 });
