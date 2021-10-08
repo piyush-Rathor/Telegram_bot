@@ -17,7 +17,7 @@ const uploadParams = {
 
 const uploadFile =  async (file) =>{
   const myFileName=file.originalname.split(".");
-  const fileType=myFileName[myFileName.length-1]
+  const fileType=myFileName[myFileName.length-1];
   uploadParams.Key=`${v4()}.${fileType}`,
   uploadParams.Body = file.buffer;
   let data = await s3Client.upload(uploadParams).promise();
