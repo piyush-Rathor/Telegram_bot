@@ -6,6 +6,8 @@ export default {
   NODE_ENV: process.env.NODE_ENV,
   MONGODB_URI: process.env.MONGODB_URI,
   JWT_SECRET: process.env.JWT_SECRET,
+  SSL_KEY: process.env.SSL_KEY,
+  SSL_CERT: process.env.SSL_CERT,
 };
 
 export const awsCredentials = {
