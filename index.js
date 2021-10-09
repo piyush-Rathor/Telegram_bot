@@ -14,7 +14,7 @@ import constants from "./configs/constants.js";
 
 import userRouter from "./routes/user.route.js";
 
-app.use("/user",userRouter);
+app.use("/user", userRouter);
 
 middlewaresConfig(app);
 
@@ -49,7 +49,7 @@ server.listen(constants.PORT, async () => {
   });
   console.log(
     chalk.blueBright.bold(
-          `
+      `
           App listen on port: ${constants.PORT} 🍕
           Env: ${constants.NODE_ENV} 🦄
          `
