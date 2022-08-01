@@ -13,6 +13,7 @@ import middlewaresConfig, {
 import constants from "./configs/constants.js";
 
 import userRouter from "./routes/user.route.js";
+import "./services/telegram.bot.js"
 
 app.use("/user", userRouter);
 
@@ -27,7 +28,7 @@ responseMiddleware(app);
 let server,
   protocol = "";
 let appEnv = constants.NODE_ENV;
-if (appEnv === "development") {
+if (appEnv === "development" || appEnv==="dev") {
   protocol = "HTTP";
   server = http.createServer(app);
 } else {
