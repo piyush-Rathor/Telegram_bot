@@ -8,6 +8,7 @@ export default {
   JWT_SECRET: process.env.JWT_SECRET,
   SSL_KEY: process.env.SSL_KEY,
   SSL_CERT: process.env.SSL_CERT,
+  TELEGRAM_BOT_ID:process.env.TELEGRAM_KEY
 };
 
 export const awsCredentials = {

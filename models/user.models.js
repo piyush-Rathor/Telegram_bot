@@ -1,25 +1,27 @@
-import { Schema } from "mongoose";
-import { hashSync, compareSync } from "bcrypt-nodejs";
-import { v4 as uuidv4 } from "uuid";
+import mongoose from "mongoose";
 
-const UserSchema = new Schema(
+const Schema = mongoose.Schema;
+
+const userSchema = new Schema(
   {
-    email: { 
-    type: String,
-    required: true,
-    trim: true,
-    unique: true,
-  },
-  password: { 
-    type:String,
-    required: true,
-    trim: true
-  },
-  role:{ 
-    type: String,
-    required: true,
-    enum:["client","admin"]
-  }
+    firstName: {
+      type: String,
+      required: true,
+    },
+    lastName: {
+      type: String,
+      trim: true,
+    },
+    telegramId: {
+      type: Number,
+      required: true,
+      trim: true,
+      index: true,
+    },
+    isConsent: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
@@ -27,4 +29,4 @@ const UserSchema = new Schema(
   }
 );
 
-let User = db.model("User", UserSchema);
+export const User = mongoose.model("user", userSchema);
